@@ -1,0 +1,39 @@
+
+message LayerParam {
+  string name = 1;
+  string type = 2;
+  int32 num_inputs = 3;
+  int32 num_outputs = 4;
+  int32 num_units = 5;
+  repeated Unit units = 6;
+}
+
+message Unit {
+  int32 id = 1;
+  LogLayerParam log_param = 2;
+  TanhLayerParam tanh_param = 3;
+  ReluLayerParam relu_param = 4; 
+}
+
+message Data {
+  repeated Instance instance = 1;
+}
+
+message Instance {
+  repeated Feature features = 1;
+}
+
+message FC {
+  repeated Feature features = 1;
+}
+
+message Feature {
+  string name = 1;
+  string string_value = 2;
+  int32 int32_value = 3;
+  int64 int64_value = 4;
+  double double_value = 5;
+  float float_value = 6;
+  bool bool_value = 7;
+}
+
